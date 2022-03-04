@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center my-4">
+      <h1>쇼생크 탈출과 비슷한 영화 추천받기</h1>
+    </div>
+    <div class="col-12 col-md-6">
+      {% comment %} img {% endcomment %}
+      <div>
+        <img src="https://image.tmdb.org/t/p/original/{{ poster_path }}" alt="" style="width: 100%;">
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      {% comment %} desc {% endcomment %}
+      <h2 style="display:inline;">{{ title }}</h2>
+      <button type="button" class="btn btn-success">{{ vote_average }}</button>
+      <br><br>
+      {{ overview }}
+      <br><br>
+      <div class="text-secondary">
+        개봉일 : {{ release_date }}
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary w-100">상세정보</button>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
